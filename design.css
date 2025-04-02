@@ -1,0 +1,118 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styling */
+{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('mater-1.webp'); /* Replace with your image file */
+    background-size: cover; /* Scales the image to cover the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+}
+
+/* Heading */
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Login Form */
+#login {
+    width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+    color: #333;
+}
+
+#login h2 {
+    color: #0056b3;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #ff7f11;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(255, 127, 17, 0.4);
+}
+
+button {
+    width: 20%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    background: #ff7f11;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #e66a00;
+}
+
+/* Dashboard Sections (Hidden Initially) */
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #login {
+        width: 20%;
+    }
+	#logoutBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+	padding: 5px 10px; /* Adjust padding */
+    font-size: 14px; /* Reduce font size */
+    width: auto; /* Auto width */
+    height: auto; /* Auto height */
+}
+
+#logoutBtn:hover {
+    background-color: #cc0000;
+}

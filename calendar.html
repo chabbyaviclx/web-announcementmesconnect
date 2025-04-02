@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Calendar</title>
+    <link rel="stylesheet" href="style.css">
+	  <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .calendar-container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .calendar-header button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        .calendar-day {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            position: relative;
+        }
+        .calendar-day:hover {
+            background: #007bff;
+            color: white;
+        }
+        .event-item {
+            background: #ff4d4d;
+            color: white;
+            padding: 3px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        #eventForm {
+            display: none;
+            background: white;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body data-role="Admin"> <!-- Change to "Student" if testing as a student -->
+    <div class="calendar-container">
+        <h2 id="currentMonth"></h2>
+        <div id="calendar">
+            <div id="calendar-days"></div>
+        </div>
+        <button id="prevMonth">Previous</button>
+        <button id="nextMonth">Next</button>
+    </div>
+
+    <!-- Event Form (Only visible for Admins & Teachers) -->
+    <div id="eventForm" class="modal">
+        <div class="modal-content">
+            <h3>Add Event</h3>
+            <input type="text" id="eventTitle" placeholder="Event Title">
+            <textarea id="eventDesc" placeholder="Event Description"></textarea>
+            <input type="date" id="eventDate">
+            <button id="saveEvent">Save Event</button>
+            <button id="closeEventForm">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

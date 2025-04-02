@@ -1,0 +1,78 @@
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.calendar-container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+#calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    min-height: 60px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.event-item {
+    background: #4CAF50;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    text-align: left;
+}
+
+button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#saveEvent {
+    background: #28a745;
+    color: white;
+}
+
+#closeEventForm {
+    background: red;
+    color: white;
+}
